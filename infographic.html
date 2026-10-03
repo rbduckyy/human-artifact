@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI: What Are We Trading for Convenience?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f7fb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #4b5563;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .intro, .takeaway, .sources {
+      background: white;
+      padding: 24px;
+      border-radius: 14px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+
+    button {
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      background: #dbeafe;
+      color: #1e3a8a;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #bfdbfe;
+    }
+
+    .info-panel {
+      background: white;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      min-height: 240px;
+    }
+
+    .info-panel h2 {
+      margin-top: 0;
+    }
+
+    .label {
+      font-weight: bold;
+      margin-top: 14px;
+    }
+
+    .sources ul {
+      padding-left: 20px;
+    }
+
+    a {
+      color: #2563eb;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>AI: What Are We Trading for Convenience?</h1>
+      <p class="subtitle">
+        AI can save time and expand what people can do—but those benefits come with costs, risks, and changes to human behavior.
+      </p>
+    </header>
+
+    <section class="intro">
+      <p>
+        AI is often discussed in extremes: either as a revolutionary tool or a dangerous threat.
+        In reality, it is both useful and costly. The important question is not simply whether AI
+        is “good” or “bad,” but what tradeoffs we accept when we use it.
+      </p>
+    </section>
+
+    <div class="button-grid">
+      <button onclick="showInfo('convenience')">Convenience</button>
+      <button onclick="showInfo('cost')">Cost</button>
+      <button onclick="showInfo('sustainability')">Sustainability</button>
+      <button onclick="showInfo('accuracy')">Accuracy</button>
+      <button onclick="showInfo('privacy')">Privacy</button>
+      <button onclick="showInfo('impact')">Human Impact</button>
+    </div>
+
+    <section class="info-panel" id="infoPanel">
+      <h2>Convenience</h2>
+      <p><strong>Benefit:</strong> AI helps people write, summarize, brainstorm, code, and research faster.</p>
+      <p><strong>Tradeoff:</strong> Faster work is not always better work. Speed can reduce reflection and independent thinking.</p>
+      <p><strong>Question:</strong> If AI makes a task easier, what do we stop practicing ourselves?</p>
+    </section>
+
+    <section class="takeaway">
+      <h2>Final Takeaway</h2>
+      <p>
+        AI is not only changing what we can do. It may also change what we expect humans to do for themselves.
+        The challenge is making sure convenience does not quietly replace judgment, responsibility, and agency.
+      </p>
+    </section>
+
+    <section class="sources">
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="#" target="_blank">Add source 1 here</a></li>
+        <li><a href="#" target="_blank">Add source 2 here</a></li>
+        <li><a href="#" target="_blank">Add source 3 here</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <script>
+    const info = {
+      convenience: {
+        title: "Convenience",
+        benefit: "AI helps people write, summarize, brainstorm, code, and research faster.",
+        tradeoff: "Faster work is not always better work. Speed can reduce reflection and independent thinking.",
+        question: "If AI makes a task easier, what do we stop practicing ourselves?"
+      },
+      cost: {
+        title: "Cost",
+        benefit: "Many AI tools feel cheap or free to individual users.",
+        tradeoff: "The systems behind them are expensive to train, run, and maintain, requiring huge investments in chips, servers, and infrastructure.",
+        question: "If the real cost is hidden from users, how does that affect adoption?"
+      },
+      sustainability: {
+        title: "Sustainability",
+        benefit: "AI can increase efficiency in some tasks and industries.",
+        tradeoff: "Large AI systems rely on energy-intensive data centers and resource-heavy infrastructure, including water and electricity.",
+        question: "Is the convenience of AI worth the environmental burden needed to scale it?"
+      },
+      accuracy: {
+        title: "Accuracy",
+        benefit: "AI can produce useful answers quickly.",
+        tradeoff: "It can also hallucinate, oversimplify, or sound more certain than it really is.",
+        question: "If something sounds intelligent, how often do we stop checking whether it is correct?"
+      },
+      privacy: {
+        title: "Privacy",
+        benefit: "AI tools can personalize responses and assist with specific tasks.",
+        tradeoff: "That often requires users to share prompts, files, or personal information, raising concerns about data use and storage.",
+        question: "How much private information are we willing to trade for convenience?"
+      },
+      impact: {
+        title: "Human Impact",
+        benefit: "AI can expand access and help people do things they previously struggled with.",
+        tradeoff: "It may also weaken some skills, shift jobs, affect education, and change expectations of human work.",
+        question: "When does assistance become dependence?"
+      }
+    };
+
+    function showInfo(category) {
+      const panel = document.getElementById("infoPanel");
+      panel.innerHTML = `
+        <h2>${info[category].title}</h2>
+        <p><strong>Benefit:</strong> ${info[category].benefit}</p>
+        <p><strong>Tradeoff:</strong> ${info[category].tradeoff}</p>
+        <p><strong>Question:</strong> ${info[category].question}</p>
+      `;
+    }
+  </script>
+</body>
+</html>
