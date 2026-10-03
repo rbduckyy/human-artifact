@@ -4,7 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI: What Are We Trading for Convenience?</title>
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -14,34 +19,48 @@
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 1050px;
       margin: 0 auto;
       padding: 40px 20px;
     }
 
     header {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 35px;
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.7rem;
       margin-bottom: 10px;
+      line-height: 1.15;
     }
 
     .subtitle {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       color: #4b5563;
-      max-width: 700px;
+      max-width: 760px;
       margin: 0 auto;
     }
 
-    .intro, .takeaway, .sources {
+    .intro,
+    .takeaway,
+    .sources {
       background: white;
-      padding: 24px;
-      border-radius: 14px;
+      padding: 26px;
+      border-radius: 16px;
       margin-bottom: 30px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    }
+
+    .intro {
+      border-left: 5px solid #2563eb;
+    }
+
+    .instruction {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 16px;
+      color: #374151;
     }
 
     .button-grid {
@@ -52,11 +71,12 @@
     }
 
     button {
-      padding: 14px;
+      padding: 15px 10px;
       border: none;
       border-radius: 10px;
       background: #dbeafe;
       color: #1e3a8a;
+      font-size: 0.95rem;
       font-weight: bold;
       cursor: pointer;
       transition: 0.2s;
@@ -64,134 +84,459 @@
 
     button:hover {
       background: #bfdbfe;
+      transform: translateY(-2px);
+    }
+
+    button.active {
+      background: #2563eb;
+      color: white;
     }
 
     .info-panel {
       background: white;
-      padding: 24px;
-      border-radius: 14px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-      min-height: 240px;
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      min-height: 370px;
+      margin-bottom: 30px;
     }
 
     .info-panel h2 {
       margin-top: 0;
+      font-size: 2rem;
     }
 
-    .label {
+    .big-stat {
+      font-size: 2.8rem;
       font-weight: bold;
-      margin-top: 14px;
+      color: #2563eb;
+      margin: 5px 0 3px;
+      line-height: 1.1;
     }
 
-    .sources ul {
-      padding-left: 20px;
+    .stat-label {
+      color: #6b7280;
+      margin-top: 0;
+      margin-bottom: 25px;
+      font-size: 0.95rem;
+    }
+
+    .section-label {
+      font-weight: bold;
+      color: #111827;
+      margin-bottom: 3px;
+    }
+
+    .question-box {
+      margin-top: 24px;
+      padding: 18px;
+      background: #eff6ff;
+      border-left: 4px solid #2563eb;
+      border-radius: 8px;
+      font-size: 1.08rem;
+    }
+
+    .source-link {
+      display: inline-block;
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+
+    .takeaway {
+      text-align: center;
+    }
+
+    .takeaway h2 {
+      margin-top: 0;
+    }
+
+    .takeaway strong {
+      color: #1e3a8a;
+    }
+
+    .final-question {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .sources h2 {
+      margin-top: 0;
+    }
+
+    .sources li {
+      margin-bottom: 12px;
     }
 
     a {
       color: #2563eb;
     }
+
+    footer {
+      text-align: center;
+      color: #6b7280;
+      font-size: 0.85rem;
+      margin-top: 25px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .big-stat {
+        font-size: 2.2rem;
+      }
+
+      .info-panel {
+        padding: 22px;
+      }
+    }
   </style>
 </head>
+
 <body>
   <div class="container">
+
     <header>
       <h1>AI: What Are We Trading for Convenience?</h1>
+
       <p class="subtitle">
-        AI can save time and expand what people can do—but those benefits come with costs, risks, and changes to human behavior.
+        Artificial intelligence can make us faster, more productive, and more capable.
+        But those benefits come with costs, risks, and changes that are easy to overlook.
       </p>
     </header>
 
     <section class="intro">
       <p>
-        AI is often discussed in extremes: either as a revolutionary tool or a dangerous threat.
-        In reality, it is both useful and costly. The important question is not simply whether AI
-        is “good” or “bad,” but what tradeoffs we accept when we use it.
+        AI is often discussed in extremes: either as a revolutionary technology that will
+        improve everything or as a threat that will make everything worse. Reality is more
+        complicated. AI can be genuinely useful while also creating new problems.
+      </p>
+
+      <p>
+        Instead of asking whether AI is simply "good" or "bad," it may be more useful to ask:
+        <strong>What are we gaining, what are we giving up, and where is the tradeoff worth it?</strong>
       </p>
     </section>
 
+    <p class="instruction">Click a category to explore one of AI's tradeoffs.</p>
+
     <div class="button-grid">
-      <button onclick="showInfo('convenience')">Convenience</button>
-      <button onclick="showInfo('cost')">Cost</button>
-      <button onclick="showInfo('sustainability')">Sustainability</button>
-      <button onclick="showInfo('accuracy')">Accuracy</button>
-      <button onclick="showInfo('privacy')">Privacy</button>
-      <button onclick="showInfo('impact')">Human Impact</button>
+      <button class="category-button active" onclick="showInfo('convenience', this)">
+        Convenience
+      </button>
+
+      <button class="category-button" onclick="showInfo('cost', this)">
+        Cost
+      </button>
+
+      <button class="category-button" onclick="showInfo('sustainability', this)">
+        Sustainability
+      </button>
+
+      <button class="category-button" onclick="showInfo('accuracy', this)">
+        Accuracy
+      </button>
+
+      <button class="category-button" onclick="showInfo('privacy', this)">
+        Privacy
+      </button>
+
+      <button class="category-button" onclick="showInfo('impact', this)">
+        Human Impact
+      </button>
     </div>
 
     <section class="info-panel" id="infoPanel">
+
       <h2>Convenience</h2>
-      <p><strong>Benefit:</strong> AI helps people write, summarize, brainstorm, code, and research faster.</p>
-      <p><strong>Tradeoff:</strong> Faster work is not always better work. Speed can reduce reflection and independent thinking.</p>
-      <p><strong>Question:</strong> If AI makes a task easier, what do we stop practicing ourselves?</p>
+
+      <div class="big-stat">+14%</div>
+
+      <p class="stat-label">
+        Average productivity increase in a study of 5,179 customer-support agents using a generative AI assistant.
+      </p>
+
+      <p class="section-label">The Benefit</p>
+      <p>
+        AI can help people complete tasks faster. In the study, productivity was measured
+        by how many customer issues workers resolved per hour.
+      </p>
+
+      <p class="section-label">The Tradeoff</p>
+      <p>
+        Making tasks easier can also change what people practice and learn for themselves.
+        Convenience can save time, but it may also reduce the need to develop certain skills.
+      </p>
+
+      <div class="question-box">
+        <strong>Question:</strong>
+        When AI makes us faster, what are we no longer learning to do ourselves?
+      </div>
+
+      <a class="source-link"
+         href="https://www.nber.org/papers/w31161"
+         target="_blank">
+        Source: National Bureau of Economic Research
+      </a>
+
     </section>
 
     <section class="takeaway">
-      <h2>Final Takeaway</h2>
+      <h2>So, Is AI Worth It?</h2>
+
       <p>
-        AI is not only changing what we can do. It may also change what we expect humans to do for themselves.
-        The challenge is making sure convenience does not quietly replace judgment, responsibility, and agency.
+        AI is not just a tool with a list of advantages and disadvantages.
+        It is a series of <strong>tradeoffs</strong>.
+      </p>
+
+      <p>
+        It can make us faster, more capable, and more productive. But those gains come
+        with questions about money, resources, reliability, privacy, employment, and
+        what we still expect humans to do for themselves.
+      </p>
+
+      <p class="final-question">
+        The question may not be whether AI is worth using.<br>
+        It may be: <strong>Where is the tradeoff worth making?</strong>
       </p>
     </section>
 
     <section class="sources">
       <h2>Sources</h2>
+
       <ul>
-        <li><a href="#" target="_blank">Add source 1 here</a></li>
-        <li><a href="#" target="_blank">Add source 2 here</a></li>
-        <li><a href="#" target="_blank">Add source 3 here</a></li>
+        <li>
+          Brynjolfsson, Erik, Danielle Li, and Lindsey Raymond.
+          <a href="https://www.nber.org/papers/w31161" target="_blank">
+            "Generative AI at Work." National Bureau of Economic Research.
+          </a>
+        </li>
+
+        <li>
+          Stanford Institute for Human-Centered Artificial Intelligence.
+          <a href="https://hai.stanford.edu/assets/files/hai_ai_index_report_2025.pdf" target="_blank">
+            AI Index Report 2025.
+          </a>
+        </li>
+
+        <li>
+          Lawrence Berkeley National Laboratory.
+          <a href="https://bies.lbl.gov/publications/united-states-data-center-energy-2025" target="_blank">
+            United States Data Center Energy Usage Report: 2025 Update.
+          </a>
+        </li>
+
+        <li>
+          National Institute of Standards and Technology.
+          <a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf" target="_blank">
+            Artificial Intelligence Risk Management Framework: Generative AI Profile.
+          </a>
+        </li>
+
+        <li>
+          Pew Research Center.
+          <a href="https://www.pewresearch.org/internet/2026/06/17/why-dont-people-use-chatbots/" target="_blank">
+            "Why Don't People Use Chatbots?"
+          </a>
+        </li>
+
+        <li>
+          International Monetary Fund.
+          <a href="https://www.imf.org/en/Blogs/Articles/2024/01/14/ai-will-transform-the-global-economy-lets-make-sure-it-benefits-humanity" target="_blank">
+            "AI Will Transform the Global Economy."
+          </a>
+        </li>
       </ul>
     </section>
+
+    <footer>
+      Interactive infographic created for the Human Artifact project.
+    </footer>
+
   </div>
 
   <script>
+
     const info = {
+
       convenience: {
         title: "Convenience",
-        benefit: "AI helps people write, summarize, brainstorm, code, and research faster.",
-        tradeoff: "Faster work is not always better work. Speed can reduce reflection and independent thinking.",
-        question: "If AI makes a task easier, what do we stop practicing ourselves?"
+        stat: "+14%",
+        statLabel:
+          "Average productivity increase in a study of 5,179 customer-support agents using a generative AI assistant.",
+
+        benefit:
+          "AI can help people complete tasks faster. In the study, productivity was measured by how many customer issues workers resolved per hour.",
+
+        tradeoff:
+          "Making tasks easier can also change what people practice and learn for themselves. Convenience can save time, but it may also reduce the need to develop certain skills.",
+
+        question:
+          "When AI makes us faster, what are we no longer learning to do ourselves?",
+
+        source:
+          "https://www.nber.org/papers/w31161",
+
+        sourceName:
+          "National Bureau of Economic Research"
       },
+
       cost: {
         title: "Cost",
-        benefit: "Many AI tools feel cheap or free to individual users.",
-        tradeoff: "The systems behind them are expensive to train, run, and maintain, requiring huge investments in chips, servers, and infrastructure.",
-        question: "If the real cost is hidden from users, how does that affect adoption?"
+        stat: "$192M",
+        statLabel:
+          "Stanford's AI Index estimates that training Gemini 1.0 Ultra cost about $192 million. GPT-4 was estimated at $79 million and Llama 3.1-405B at $170 million.",
+
+        benefit:
+          "Many AI tools feel inexpensive or even free to the individual user, making powerful computing accessible to millions of people.",
+
+        tradeoff:
+          "The infrastructure behind those tools can be extremely expensive. Training and operating large AI systems requires specialized chips, servers, data centers, electricity, cooling, and enormous investment.",
+
+        question:
+          "If users barely see the real cost of AI, does that change how casually we use it?",
+
+        source:
+          "https://hai.stanford.edu/assets/files/hai_ai_index_report_2025.pdf",
+
+        sourceName:
+          "Stanford AI Index Report 2025"
       },
+
       sustainability: {
         title: "Sustainability",
-        benefit: "AI can increase efficiency in some tasks and industries.",
-        tradeoff: "Large AI systems rely on energy-intensive data centers and resource-heavy infrastructure, including water and electricity.",
-        question: "Is the convenience of AI worth the environmental burden needed to scale it?"
+        stat: "9.5–15.3%",
+        statLabel:
+          "Projected share of total U.S. electricity that data centers could consume by 2030. They accounted for about 4.4% in 2023.",
+
+        benefit:
+          "AI can improve efficiency, automate tasks, and potentially help solve problems in fields ranging from science to energy management.",
+
+        tradeoff:
+          "Those capabilities require physical infrastructure. Data centers consume electricity and require cooling, while AI hardware also depends on resource-intensive manufacturing.",
+
+        question:
+          "How much energy and infrastructure should we be willing to use for greater computational convenience?",
+
+        source:
+          "https://bies.lbl.gov/publications/united-states-data-center-energy-2025",
+
+        sourceName:
+          "Lawrence Berkeley National Laboratory"
       },
+
       accuracy: {
         title: "Accuracy",
-        benefit: "AI can produce useful answers quickly.",
-        tradeoff: "It can also hallucinate, oversimplify, or sound more certain than it really is.",
-        question: "If something sounds intelligent, how often do we stop checking whether it is correct?"
+        stat: "Confabulation",
+        statLabel:
+          "NIST's term for when generative AI confidently produces false, erroneous, or internally inconsistent information.",
+
+        benefit:
+          "AI can retrieve, organize, summarize, and generate information extremely quickly, making it useful for research, explanation, and brainstorming.",
+
+        tradeoff:
+          "Generative AI predicts likely outputs rather than independently verifying every statement. This means an answer can sound convincing even when parts of it are false.",
+
+        question:
+          "If an answer sounds intelligent, how often do we stop checking whether it is actually true?",
+
+        source:
+          "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+
+        sourceName:
+          "National Institute of Standards and Technology"
       },
+
       privacy: {
         title: "Privacy",
-        benefit: "AI tools can personalize responses and assist with specific tasks.",
-        tradeoff: "That often requires users to share prompts, files, or personal information, raising concerns about data use and storage.",
-        question: "How much private information are we willing to trade for convenience?"
+        stat: "79%",
+        statLabel:
+          "Of U.S. adults who never use AI chatbots, 79% said concern about how their personal information would be used was at least one reason why.",
+
+        benefit:
+          "AI becomes more useful when it understands the context of a person's question, work, interests, or situation.",
+
+        tradeoff:
+          "Providing that context can mean sharing conversations, documents, work information, or personal details. The more useful a system becomes, the more information users may be tempted to give it.",
+
+        question:
+          "How much information are we willing to exchange for a better answer?",
+
+        source:
+          "https://www.pewresearch.org/internet/2026/06/17/why-dont-people-use-chatbots/",
+
+        sourceName:
+          "Pew Research Center"
       },
+
       impact: {
         title: "Human Impact",
-        benefit: "AI can expand access and help people do things they previously struggled with.",
-        tradeoff: "It may also weaken some skills, shift jobs, affect education, and change expectations of human work.",
-        question: "When does assistance become dependence?"
+        stat: "40%",
+        statLabel:
+          "The IMF estimates that almost 40% of global employment is exposed to AI. In advanced economies, the estimate is about 60%.",
+
+        benefit:
+          "AI may complement workers, improve productivity, lower barriers to difficult tasks, and give individuals access to capabilities they previously did not have.",
+
+        tradeoff:
+          "Other jobs or tasks may be automated, reduced, or transformed. Beyond employment, reliance on AI may also change how people learn, write, create, solve problems, and make decisions.",
+
+        question:
+          "When does assistance stop extending human ability and start replacing the practice that created that ability?",
+
+        source:
+          "https://www.imf.org/en/Blogs/Articles/2024/01/14/ai-will-transform-the-global-economy-lets-make-sure-it-benefits-humanity",
+
+        sourceName:
+          "International Monetary Fund"
       }
+
     };
 
-    function showInfo(category) {
+
+    function showInfo(category, button) {
+
+      const item = info[category];
+
       const panel = document.getElementById("infoPanel");
+
       panel.innerHTML = `
-        <h2>${info[category].title}</h2>
-        <p><strong>Benefit:</strong> ${info[category].benefit}</p>
-        <p><strong>Tradeoff:</strong> ${info[category].tradeoff}</p>
-        <p><strong>Question:</strong> ${info[category].question}</p>
+        <h2>${item.title}</h2>
+
+        <div class="big-stat">${item.stat}</div>
+
+        <p class="stat-label">
+          ${item.statLabel}
+        </p>
+
+        <p class="section-label">The Benefit</p>
+        <p>${item.benefit}</p>
+
+        <p class="section-label">The Tradeoff</p>
+        <p>${item.tradeoff}</p>
+
+        <div class="question-box">
+          <strong>Question:</strong>
+          ${item.question}
+        </div>
+
+        <a class="source-link"
+           href="${item.source}"
+           target="_blank">
+          Source: ${item.sourceName}
+        </a>
       `;
+
+      document.querySelectorAll(".category-button").forEach(btn => {
+        btn.classList.remove("active");
+      });
+
+      button.classList.add("active");
     }
+
   </script>
+
 </body>
 </html>
